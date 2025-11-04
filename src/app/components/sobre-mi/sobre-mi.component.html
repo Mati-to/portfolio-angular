@@ -1,0 +1,37 @@
+<div class='container-md px-5 text-center'>
+    <div>
+        <h1 class='py-2'>Sobre mí</h1>
+
+        <p>
+            Desde pequeño me ha apasionado la tecnología: comencé jugando en consolas como el SNES y 
+            luego explorando un PC de escritorio cerca de los 6 años. Aunque mi camino inicialmente 
+            se desvió hacia el área de la salud después del colegio, en 2022 descubrí el mundo del 
+            desarrollo web y supe que esto era realmente lo mío.
+        </p>
+        <p>
+            Antes de estudiar la carrera de manera formal, dediqué un año a aprender programación de 
+            forma autodidacta. En 2024 decidí ingresar a la carrera de Analista Programador para 
+            profundizar mis conocimientos y consolidar mi formación
+        </p>
+        <p>
+            Hoy me encuentro enfocado en aprender distintos aspectos del desarrollo para adquirir un 
+            conocimiento integral del área y seguir creciendo como profesional, combinando mi pasión 
+            por la tecnología con la práctica constante y el aprendizaje continuo.
+        </p>
+    </div>
+    <div>
+        <h3 class='py-3'>Tecnologías</h3>
+        <ul class='d-flex flex-column' >
+            <div class="mb-3" *ngFor="let categoria of tecnologias | keyvalue">
+                <div class="d-flex gap-2 justify-content-center align-items-center">
+                    <img [src]="'assets/svg/' + categoria.key + '-icon.svg'" [width]="25" [alt]="categoria.key" class="icon-svg">
+                    <p class="m-0 text-capitalize">{{ categoria.key }}</p>
+                </div>
+                <li class='btn btn-info border-dark no-click' *ngFor="let tech of categoria.value">
+                    {{ tech }}
+                </li>
+            </div>
+            
+        </ul>
+    </div>
+</div>

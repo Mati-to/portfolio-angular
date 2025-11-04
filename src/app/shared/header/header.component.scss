@@ -1,0 +1,29 @@
+@import '/src/styles.scss';
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+    display: inline-block; 
+    width: auto;           
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: $primary;
+    transition: width 0.3s ease;
+}
+  
+.nav-link:hover::after,
+.active-link::after {
+    width:100%;
+}
+  
+
+li {
+    padding: 0px 10px;
+}

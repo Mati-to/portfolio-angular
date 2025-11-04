@@ -1,0 +1,47 @@
+<div class='container-md px-5'>
+    <h1 class='text-center mt-2 mb-4'>Contáctame</h1>
+
+    <div class="row">
+        <div class='col-12 col-lg-6 mb-2'>
+            <form #contactForm="ngForm" (ngSubmit)="enviarEmail()">
+                <div class="mb-3">
+                    <label for="nombre_emisor" class="form-label">Nombre</label>
+                    <input type="text" name="nombre_emisor" [(ngModel)]="form.nombre_emisor" class="form-control custom-input" id="nombre_emisor" required>
+                </div>
+                <div class="mb-3">
+                    <label for="asunto" class="form-label">Asunto</label>
+                    <input type="text" name="asunto" [(ngModel)]="form.asunto" class="form-control custom-input" id="asunto" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo de contacto</label>
+                    <input type="email" name="email" [(ngModel)]="form.email" class="form-control custom-input" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control custom-input" [(ngModel)]="form.mensaje" name="mensaje" id="mensaje" required></textarea>
+                </div>
+
+                <button [disabled]="bloqueoTemporal" type="submit" class="btn btn-primary">
+                    Enviar
+                </button>
+            </form>
+
+                <!-- Mensajes de Feedback -->
+            <swal #successSwal title="Bien!" text="Mensaje enviado con éxito" icon="success"></swal>
+            <swal #errorSwal title="Error" text="No se pudo enviar el mensaje" icon="error"></swal>
+        </div>
+
+        <div class='col-12 col-lg-6 mt-md-0 my-5 d-flex justify-content-center'>
+            <div class="d-flex gap-3 align-items-center">
+                <a 
+                    *ngFor="let red of rrss"
+                    [href]="red.link" 
+                    target="_blank" 
+                    class="social-link">
+                    <img [src]="'assets/svg/'+ red.nombre +'-icon.svg'" [width]="30" [alt]="red.nombre" class="icon-svg">
+                </a>
+                <h5>matiasalfaro.it@gmail.com</h5>
+            </div>
+        </div>
+    </div>
+</div>

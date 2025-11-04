@@ -1,0 +1,17 @@
+ul {
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    margin: 5px 5px;
+}
+
+li:first-child {
+    margin-left: 0;
+}
+
+.no-click {
+    pointer-events: none;
+    cursor: default;
+}
