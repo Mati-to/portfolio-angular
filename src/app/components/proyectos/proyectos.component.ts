@@ -37,8 +37,8 @@ export class ProyectosComponent {
             titulo: "Portafolio Angular",
             descripcion: "Este mismo portafolio!",
             img: "assets/img/proyectos/project-portfolio.jpg",
-            link: "",
-            github: ""
+            link: "https://mati-portafolio.netlify.app/",
+            github: "https://github.com/Mati-to/portfolio-angular"
         }
     ]
 
